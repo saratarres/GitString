@@ -34,7 +34,7 @@
 
 
 
-class Image_class
+class String
 {
   public :
     
@@ -45,12 +45,12 @@ class Image_class
     // =======================================================================
     //                               Constructors
     // =======================================================================
-    Template_class(void);
+    String(void);
 
     // =======================================================================
     //                                Destructor
     // =======================================================================
-    virtual ~Template_class(void);
+    virtual ~String(void);
 
     // =======================================================================
     //                            Accessors: getters
@@ -86,7 +86,7 @@ class Image_class
       printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
       exit(EXIT_FAILURE);
     };*/
-    Template_class(const Template_class &model)
+    String(const String &String)
     {
       printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
       exit(EXIT_FAILURE);
@@ -102,6 +102,10 @@ class Image_class
     // =======================================================================
 };
 
+int length;
+int MAX_SIZE;
+char* _string;
+int capacity;
 
 // ===========================================================================
 //                              Getters' definitions
@@ -120,5 +124,5 @@ class Image_class
 // ===========================================================================
 
 
-#endif // __TEMPLATE_CLASS_H__
+#endif // __STRING_H__
 
