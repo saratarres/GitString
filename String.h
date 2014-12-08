@@ -104,7 +104,7 @@ class String
 };
 
 int length;
-int MAX_SIZE;
+static int MAX_SIZE;
 char* _string;
 int capacity;
 
