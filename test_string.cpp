@@ -37,7 +37,7 @@
 // ===========================================================================
 int main(int argc, char* argv[])
 {
-  printf("Hello World !\n");
+  printf("Hello World, here we are !\n");
 
   return 0;
 }
