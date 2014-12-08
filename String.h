@@ -47,8 +47,13 @@ class String
     // =======================================================================
     String(void);
 
-		//Copy constructor 
-		String (const String& str);
+    //Copy constructor 
+    String (const String& str);
+    
+    //constructor c_tring
+    String(char* c_string);
+
+		
 
 
     // =======================================================================

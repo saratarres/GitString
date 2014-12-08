@@ -37,6 +37,9 @@
 String::String(void)
 {
 }
+String::String(char* c_string)
+{
+}
 
 // ===========================================================================
 //                                  Destructor
