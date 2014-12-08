@@ -46,7 +46,15 @@ class String
     //                               Constructors
     // =======================================================================
     String(void);
+
+    //Copy constructor 
+    String (const String& str);
+    
+    //constructor c_tring
     String(char* c_string);
+
+		
+
 
     // =======================================================================
     //                                Destructor
@@ -68,6 +76,18 @@ class String
     // =======================================================================
     //                              Public Methods
     // =======================================================================
+
+
+
+		//Declaration of c_str() Method
+		const char* c_str() const;
+
+		//Declaration of size Method
+		int size() const;
+
+		//Declaration of clear Method
+		void clear();
+
 
     // =======================================================================
     //                             Public Attributes
