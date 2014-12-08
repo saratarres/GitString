@@ -12,6 +12,7 @@
 // ===========================================================================
 #include <stdlib.h>
 #include <stdio.h>
+#include "String.h"
 
 
 
@@ -38,6 +39,9 @@
 int main(int argc, char* argv[])
 {
   printf("Hello World, here we are !\n");
+	String Nouvelle_chaine = new String();
+	printf(" %d",Nouvelle_chaine.size());
+
 
   return 0;
 }

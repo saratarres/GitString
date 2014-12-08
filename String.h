@@ -134,6 +134,11 @@ int capacity;
 int capacity (void) const{
         return capacity;
 }
+
+int size() const {
+	return length;
+}
+
 // ===========================================================================
 //                              Setters' definitions
 // ===========================================================================
