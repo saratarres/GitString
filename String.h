@@ -80,17 +80,13 @@ class String
 		
 		//Declaration of clear methods
 		void clear();
+
+		//Declaration of c_str() Method
 		const char* c_str() const;
 
 
-
-		//Declaration of c_str() Method
-		//const char* c_str(void) const;
-
-		//Declaration of size Method
-		int size(void) ;
-
-		//Declaration of clear Method
+	
+	//Declaration of clear Method
 		//void clear(void);
 
         //Declaration of empty Method
@@ -148,9 +144,6 @@ class String
 //                              Getters' definitions
 // ===========================================================================
 
-//int capacity (void) const{
-        //return capacity;
-//}
 
 
 
