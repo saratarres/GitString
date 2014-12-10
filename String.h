@@ -78,11 +78,15 @@ class String
     //                              Public Methods
     // =======================================================================
 		
-		//Declaration of clear methods
+		//Declaration of clear method
 		void clear();
 
 		//Declaration of c_str() Method
 		const char* c_str() const;
+
+		//declaration of of operatoir Method
+
+		String& operator= (const String& str);
 
 
 	
