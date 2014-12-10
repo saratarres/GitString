@@ -137,21 +137,13 @@ class String
 // ===========================================================================
 //                              Getters' definitions
 // ===========================================================================
-<<<<<<< HEAD
-int GetCapacity (void) {
-        return capacity;
-}
-
-int GetSize() {
+int Size() {
 	return length;
 }
-=======
 //int capacity (void) const{
         //return capacity;
 //}
 
-
->>>>>>> 3fbacaeb9007aa4940a04276ff762023ebcc0812
 
 
 // ===========================================================================
