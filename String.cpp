@@ -82,33 +82,43 @@ String::~String(void)
 // ===========================================================================
 
 
-		int String :: size(void) const{
-			return length;
-		}
-                int String :: length(void) const{
-			return length;
-		}
-		int String :: Get_capacity (void) const{
-				return capacity;
-			
+int String :: size(void) const
+{
+  return length;
+}
+                
+int String :: length(void) const
+{
+  return length;
+}
+int String::max_size(void) const
+{
+  return MAX_SIZE;
+}
+		
+int String :: Get_capacity (void) const
+{
+  return capacity;
+}
 
+int String :: empty()
+{
+  if(size()==0)
+  {
+    return 0;
+  }
+  if (size()!=0){
+    return 1;
+  }
+}
 
-		}
-
-		int String :: empty(){
-			if(size()==0){
-				return 0;
-			}if (size()!=0){
-				return 1;
-			}
-		}
-
-		void String :: reserve (int n){
-			n = size();
-			if (capacity<n){
-				capacity=n;
-			}
-		}
+void String :: reserve (int n)
+{
+  n = size();
+  if (capacity<n){
+  capacity=n;
+  }
+}
 
 
 		void String :: clear(void)

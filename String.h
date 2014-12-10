@@ -67,6 +67,7 @@ class String
     int Get_capacity (void) const;
     int size(void) const ;
     int length(void) const; //size and length are twin brother :) 
+    int max_size(void) const;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
