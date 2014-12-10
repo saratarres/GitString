@@ -41,14 +41,14 @@ String:: String(void)
 	capacity = 0;
 }
 
-String ::String (const String& str)
+/*String ::String (const String& str)
 {
 
 	length = str.size();
 	//_string = str.c_string();
 	capacity = str.Get_capacity();
 	
-}
+}*/
 
 String::String(char* c_string)
 {
@@ -75,14 +75,24 @@ String::~String(void)
 		}
 
 		int String :: Get_capacity (void) const{
-			return capacity;
+				return capacity;
+			
+
+
 		}
 
-		int String :: empty(int length){
-			if(length==0){
+		int String :: empty(){
+			if(size()==0){
 				return 0;
-			}if (length!=0){
+			}if (size()!=0){
 				return 1;
+			}
+		}
+
+		void String :: reserve (int n){
+			n = size();
+			if (capacity<n){
+				capacity=n;
 			}
 		}
 
