@@ -64,11 +64,14 @@ class String
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-    int Get_capacity (void) const;
+        int Get_capacity (void) const;
 		int size(void) const ;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
+
+      //Declaration of reserve (capacity setter only if needed)
+        void reserve (int n);
 
     // =======================================================================
     //                                Operators
@@ -87,9 +90,6 @@ class String
         //Declaration of empty Method
           //if length is 0 returns 0, if not returns 1.
         int empty ();
-
-        //Declaration of reserve
-        void reserve (int n);
 
         //Operator = for char*
         String& Operator= (const char* s);
