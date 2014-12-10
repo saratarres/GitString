@@ -1,14 +1,14 @@
 all : test_string
 
-test_string : test_string.o test_string.cpp
-	g++ -o  test_string test_string.cpp  test_string.o
+test_string : String.o test_string.cpp
+	g++ -g -o test_string test_string.cpp  String.o
 
-ppm.o : String.h String.cpp
-	g++ -o test_string.o -c String.cpp
+String.o : String.h String.cpp
+	g++ -g -o String.o -c String.cpp
 
 
 clean :
 	rm *.o
 
 mrproper : clean
-	rm ppm
+	rm test_string
