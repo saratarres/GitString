@@ -94,7 +94,10 @@ class String
 
         //Declaration of empty Method
           //if length is 0 returns 0, if not returns 1.
-        int empty (int length);
+        int empty ();
+
+        //Declaration of reserve
+        void reserve (int n);
 
 
 
