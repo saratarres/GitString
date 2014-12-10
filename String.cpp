@@ -70,7 +70,7 @@ String::~String(void)
 // ===========================================================================
 
 
-		int String :: size(void){
+		int String :: size(void) const {
 		return length;
 		}
 
