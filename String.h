@@ -80,6 +80,7 @@ class String
 		
 		//Declaration of clear methods
 		void clear();
+		const char* c_str() const;
 
 
 
