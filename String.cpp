@@ -85,7 +85,9 @@ String::~String(void)
 		int String :: size(void) const{
 			return length;
 		}
-
+                int String :: length(void) const{
+			return length;
+		}
 		int String :: Get_capacity (void) const{
 				return capacity;
 			
@@ -115,7 +117,7 @@ String::~String(void)
 		}
 
 
-//Declaration of c_str() methods
+//Implementation of _str() methods
 
 		const char* String ::  c_str() const {
 
@@ -137,6 +139,15 @@ String::~String(void)
 
 	}
 		
+
+String& String :: operator= (const String& str)
+{
+
+	  _string = str._string ;
+		
+		return str ;
+}
+
 		
 
 

@@ -64,8 +64,10 @@ class String
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-        int Get_capacity (void) const;
-		int size(void) const ;
+    int Get_capacity (void) const;
+    int size(void) const ;
+    int length(void) const; //size and length are twin brother :) 
+
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -81,18 +83,22 @@ class String
     //                              Public Methods
     // =======================================================================
 		
-		//Declaration of clear methods
+
 		void clear();
 
-		//Declaration of c_str() Method
+    //Declaration of c_str() Method
 		const char* c_str() const;
 
-        //Declaration of empty Method
-          //if length is 0 returns 0, if not returns 1.
+
+    //Declaration of empty Method
+      //if length is 0 returns 0, if not returns 1.
         int empty ();
 
-        //Operator = for char*
-        String& Operator= (const char* s);
+    //Operator = for char*
+        String& operator= (const char* s);
+
+        String& operator= (const String& str);
+
 
 
 
