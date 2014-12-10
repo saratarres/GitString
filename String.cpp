@@ -23,7 +23,7 @@
 
 //############################################################################
 //                                                                           #
-//                           Class Template_class                            #
+//                           Class String                                    #
 //                                                                           #
 //############################################################################
 
@@ -36,7 +36,7 @@
 // ===========================================================================
 String:: String(void)
 {
-	length =0;
+	length =4;
 	_string = NULL;
 	capacity = 0;
 }
@@ -45,7 +45,7 @@ String ::String (const String& str)
 {
 
 	length = str.size();
-	_string = str.c_string();
+	//_string = str.c_string();
 	capacity = str.Get_capacity();
 	
 }
@@ -70,8 +70,8 @@ String::~String(void)
 // ===========================================================================
 
 
-		int String :: size(void) const {
-		return length;
+		int String :: size(void) const{
+			return length;
 		}
 
 		int String :: Get_capacity (void) const{
@@ -85,6 +85,22 @@ String::~String(void)
 				return 1;
 			}
 		}
+
+
+		void String :: clear(void)
+		{
+			length = 0;
+		}
+
+
+		//const char* String ::  c_str() const {
+
+		//int i;		
+		//char * cstr = new char [new_chaine.size() + 2];
+
+		//for (i=0; i<new_chaine.size ;i++);
+		//new_chaine.
+		
 
 
 // ===========================================================================
