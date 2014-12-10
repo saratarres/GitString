@@ -60,7 +60,7 @@ String::String(char* c_string)
 String::~String(void)
 {
   delete _string;
-  _string = NULL;
+  _string = NULL ;
   length = 0;
   capacity = 0;
 }
@@ -93,13 +93,23 @@ String::~String(void)
 		}
 
 
-		//const char* String ::  c_str() const {
+//Declaration of c_str() methods
 
-		//int i;		
-		//char * cstr = new char [new_chaine.size() + 2];
+		const char* String ::  c_str() const {
 
-		//for (i=0; i<new_chaine.size ;i++);
-		//new_chaine.
+		int i;		
+		char* cstr = new char [ length +1 ];
+		cstr [length + 1] = '\0';
+		
+		for (i=0; i<length+1 ;i++){	
+		cstr[i] = _string[i];
+		}
+
+				
+		return cstr;
+
+		}
+		
 		
 
 
