@@ -64,7 +64,7 @@ class String
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-    int capacity (void) const;
+    //int capacity (void) const;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -80,13 +80,13 @@ class String
 
 
 		//Declaration of c_str() Method
-		const char* c_str() const;
+		//const char* c_str(void) const;
 
 		//Declaration of size Method
-		int size() const;
+		int size(void) ;
 
 		//Declaration of clear Method
-		void clear();
+		//void clear(void);
 
 
     // =======================================================================
@@ -107,11 +107,11 @@ class String
       printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
       exit(EXIT_FAILURE);
     };*/
-		/* String(const String &String)
-    {
-      printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
-      exit(EXIT_FAILURE);
-      };*/
+		//String(const String &String)
+    //{
+      //printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
+     // exit(EXIT_FAILURE);
+    //};
 
 
     // =======================================================================
@@ -131,6 +131,7 @@ int capacity;
 // ===========================================================================
 //                              Getters' definitions
 // ===========================================================================
+<<<<<<< HEAD
 int GetCapacity (void) {
         return capacity;
 }
@@ -138,6 +139,13 @@ int GetCapacity (void) {
 int GetSize() {
 	return length;
 }
+=======
+//int capacity (void) const{
+        //return capacity;
+//}
+
+
+>>>>>>> 3fbacaeb9007aa4940a04276ff762023ebcc0812
 
 // ===========================================================================
 //                              Setters' definitions
