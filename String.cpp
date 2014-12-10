@@ -119,6 +119,11 @@ String::~String(void)
 		return cstr;
 
 		}
+
+// Operator =
+	String& Operator= (const char* s){
+
+	}
 		
 		
 

@@ -84,17 +84,16 @@ class String
 		//Declaration of c_str() Method
 		const char* c_str() const;
 
-
-	
-	//Declaration of clear Method
-		//void clear(void);
-
         //Declaration of empty Method
           //if length is 0 returns 0, if not returns 1.
         int empty ();
 
         //Declaration of reserve
         void reserve (int n);
+
+        //Operator = for char*
+        String& Operator= (const char* s);
+
 
 
 
