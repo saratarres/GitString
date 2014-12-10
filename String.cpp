@@ -41,17 +41,29 @@ String:: String(void)
 	capacity = 0;
 }
 
-String ::String (const String& str)
+/*String ::String (const String& str)
 {
 
 	length = str.size();
 	_string = str.c_string();
 	capacity = str.Get_capacity();
 	
-}
+	}*/
 
-String::String(char* c_string)
+String::String(const char* c_string)
 {
+	int i=0;
+	int j=0;
+	while(c_string[i]!='\0'){
+	  i++;
+	}
+	length = i;
+	capacity = i*sizeof(char);
+	_string = new char [i];
+        for(j=0;j<i;j++){
+	  _string[j]=c_string[j];
+	}
+
 }
 
 // ===========================================================================

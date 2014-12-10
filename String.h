@@ -51,7 +51,7 @@ class String
     String (const String& stringacopier);
     
     //constructor c_tring
-    String(char* c_string);
+    String(const char* c_string);
 
 		
 
@@ -87,8 +87,7 @@ class String
 		//Declaration of c_str() Method
 		//const char* c_str(void) const;
 
-		//Declaration of size Method
-		int size(void) ;
+	
 
 		//Declaration of clear Method
 		//void clear(void);
