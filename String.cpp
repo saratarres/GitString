@@ -36,6 +36,11 @@
 // ===========================================================================
 String::String(void)
 {
+  length=0;
+  capacity=0;
+  MAX_SIZE=100;
+  _string=NULL;
+  
 }
 String::String(char* c_string)
 {
