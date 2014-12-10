@@ -12,13 +12,13 @@
 // ===========================================================================
 #include <stdlib.h>
 #include <stdio.h>
-#include "String.h"
 
 
 
 // ===========================================================================
 //                             Include Project Files
 // ===========================================================================
+#include "String.h"
 
 
 
@@ -39,7 +39,7 @@
 int main(int argc, char* argv[])
 {
   printf("Hello World, here we are !\n");
-	String Nouvelle_chaine = new String();
+	String Nouvelle_chaine = String();
 	printf(" %d",Nouvelle_chaine.size());
 
 
