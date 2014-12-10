@@ -48,7 +48,7 @@ class String
     String(void);
 
     //Copy constructor 
-    String (const String& str);
+    String (const String& stringacopier);
     
     //constructor c_tring
     String(char* c_string);
@@ -107,11 +107,11 @@ class String
       printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
       exit(EXIT_FAILURE);
     };*/
-    String(const String &String)
+		/* String(const String &String)
     {
       printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
       exit(EXIT_FAILURE);
-    };
+      };*/
 
 
     // =======================================================================
@@ -131,11 +131,11 @@ int capacity;
 // ===========================================================================
 //                              Getters' definitions
 // ===========================================================================
-int capacity (void) const{
+int GetCapacity (void) {
         return capacity;
 }
 
-int size() const {
+int GetSize() {
 	return length;
 }
 
