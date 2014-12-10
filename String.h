@@ -51,7 +51,7 @@ class String
     String (const String& stringacopier);
     
     //constructor c_tring
-    String(char* c_string);
+    String(const char* c_string);
 
 		
 
