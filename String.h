@@ -122,12 +122,16 @@ class String
     // =======================================================================
     //                             Protected Attributes
     // =======================================================================
+
+
+	int length;
+	static int MAX_SIZE;
+	char* _string;
+	int capacity;
+
 };
 
-int length;
-static int MAX_SIZE;
-char* _string;
-int capacity;
+
 
 // ===========================================================================
 //                              Getters' definitions
@@ -135,6 +139,7 @@ int capacity;
 //int capacity (void) const{
         //return capacity;
 //}
+
 
 
 
