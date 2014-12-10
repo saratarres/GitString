@@ -38,7 +38,7 @@ String:: String(void)
 {
 	length =0;
 	_string = NULL;
-	capacity =0;
+	capacity = 0;
 }
 
 String ::String (const String& str)
@@ -69,6 +69,10 @@ String::~String(void)
 
 		int String :: size(void){
 		return length;
+		}
+
+		int String :: Get_capacity (void) const{
+			return capacity;
 		}
 
 

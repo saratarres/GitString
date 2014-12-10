@@ -48,7 +48,7 @@ class String
     String(void);
 
     //Copy constructor 
-    String (const String& str);
+    String (const String& stringacopier);
     
     //constructor c_tring
     String(char* c_string);
@@ -64,7 +64,7 @@ class String
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-    //int capacity (void) const;
+    int Get_capacity (void) const;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -89,6 +89,8 @@ class String
 		//void clear(void);
 
 
+
+
     // =======================================================================
     //                             Public Attributes
     // =======================================================================
@@ -107,7 +109,6 @@ class String
       printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
       exit(EXIT_FAILURE);
     };*/
-    
 		//String(const String &String)
     //{
       //printf("%s:%d: error: call to forbidden constructor.\n", __FILE__, __LINE__);
@@ -136,10 +137,12 @@ class String
 // ===========================================================================
 //                              Getters' definitions
 // ===========================================================================
+int Size() {
+	return length;
+}
 //int capacity (void) const{
         //return capacity;
 //}
-
 
 
 
