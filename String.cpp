@@ -41,6 +41,15 @@ String:: String(void)
 	capacity = 0;
 }
 
+String ::String (const String& str)
+{
+
+	length = str.size();
+	_string = str.c_string();
+	capacity = str.Get_capacity();
+	
+}
+
 String::String(char* c_string)
 {
 }
@@ -61,7 +70,7 @@ String::~String(void)
 // ===========================================================================
 
 
-		int String :: size(void){
+		int String :: size(void) const {
 		return length;
 		}
 

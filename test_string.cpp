@@ -41,6 +41,10 @@ int main(int argc, char* argv[])
   printf("Hello World, here we are !\n");
 	String Nouvelle_chaine = String();
 	printf(" %d",Nouvelle_chaine.size());
+	int res = Nouvelle_chaine.empty(3);
+	printf("%d\n",res);
+	res = Nouvelle_chaine.empty(0);
+	printf("%d\n",res);
 
   return 0;
 }

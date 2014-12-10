@@ -65,6 +65,7 @@ class String
     //                            Accessors: getters
     // =======================================================================
     int Get_capacity (void) const;
+		int size(void) const ;
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -76,6 +77,9 @@ class String
     // =======================================================================
     //                              Public Methods
     // =======================================================================
+		
+		//Declaration of clear methods
+		void clear();
 
 
 
@@ -89,7 +93,9 @@ class String
 		//void clear(void);
 
         //Declaration of empty Method
+          //if length is 0 returns 0, if not returns 1.
         int empty (int length);
+
 
 
 
