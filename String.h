@@ -84,6 +84,21 @@ class String
 
 
 
+		//Declaration of c_str() Method
+		//const char* c_str(void) const;
+
+		//Declaration of size Method
+		int size(void) ;
+
+		//Declaration of clear Method
+		//void clear(void);
+
+        //Declaration of empty Method
+          //if length is 0 returns 0, if not returns 1.
+        int empty (int length);
+
+
+
 
 
     // =======================================================================
