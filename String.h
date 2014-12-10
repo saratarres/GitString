@@ -68,9 +68,13 @@ class String
     int size(void) const ;
     int length(void) const; //size and length are twin brother :) 
     int max_size(void) const;
+
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
+
+      //Declaration of reserve (capacity setter only if needed)
+        void reserve (int n);
 
     // =======================================================================
     //                                Operators
@@ -86,21 +90,17 @@ class String
     //Declaration of c_str() Method
 		const char* c_str() const;
 
-		//declaration of of operatoir Method
 
-		String& operator= (const String& str);
-
-
-	
-	//Declaration of clear Method
-		//void clear(void);
-
-        //Declaration of empty Method
-          //if length is 0 returns 0, if not returns 1.
+    //Declaration of empty Method
+      //if length is 0 returns 0, if not returns 1.
         int empty ();
 
-        //Declaration of reserve
-        void reserve (int n);
+    //Operator = for char*
+        String& operator= (const char* s);
+
+        String& operator= (const String& str);
+
+
 
 
 

@@ -143,6 +143,11 @@ void String :: reserve (int n)
 		return cstr;
 
 		}
+
+// Operator =
+	String& Operator= (const char* s){
+
+	}
 		
 
 String& String :: operator= (const String& str)
