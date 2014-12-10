@@ -75,11 +75,8 @@ String::~String(void)
 		}
 
 		int String :: Get_capacity (void) const{
-			if (capacity<MAX_SIZE){
 				return capacity;
-			}if(capacity>MAX_SIZE){
-				return 0;
-			}
+			
 
 
 		}
