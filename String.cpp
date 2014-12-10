@@ -34,12 +34,11 @@
 // ===========================================================================
 //                                  Constructors
 // ===========================================================================
-String::String(void)
+String:: String(void)
 {
 	length =0;
 	_string = NULL;
-	MAX_SIZE = 100;
-	capacity =0;
+	capacity = 0;
 }
 
 String::String(char* c_string)
@@ -58,9 +57,16 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
-int size(void){
-	return length;
-}
+
+		int String :: size(void){
+		return length;
+		}
+
+		int String :: Get_capacity (void) const{
+			return capacity;
+		}
+
+
 // ===========================================================================
 //                                Protected Methods
 // ===========================================================================
