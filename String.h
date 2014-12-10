@@ -65,7 +65,8 @@ class String
     //                            Accessors: getters
     // =======================================================================
     int Get_capacity (void) const;
-		int size(void) const ;
+    int size(void) const ;
+    int length(void) const; //size and length are twin brother :) 
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
@@ -78,10 +79,10 @@ class String
     //                              Public Methods
     // =======================================================================
 		
-		//Declaration of clear methods
+    //Declaration of clear methods
 		void clear();
 
-		//Declaration of c_str() Method
+    //Declaration of c_str() Method
 		const char* c_str() const;
 
 

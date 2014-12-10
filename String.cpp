@@ -85,7 +85,9 @@ String::~String(void)
 		int String :: size(void) const{
 			return length;
 		}
-
+                int String :: length(void) const{
+			return length;
+		}
 		int String :: Get_capacity (void) const{
 				return capacity;
 			
