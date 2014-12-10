@@ -88,6 +88,9 @@ class String
 		//Declaration of clear Method
 		//void clear(void);
 
+        //Declaration of empty Method
+        int empty (int length);
+
 
 
 

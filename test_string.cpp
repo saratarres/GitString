@@ -42,7 +42,6 @@ int main(int argc, char* argv[])
 	String Nouvelle_chaine = String();
 	printf(" %d",Nouvelle_chaine.size());
 
-
   return 0;
 }
 

@@ -69,6 +69,14 @@ String::~String(void)
 			return capacity;
 		}
 
+		int String :: empty(int length){
+			if(length==0){
+				return 0;
+			}if (length!=0){
+				return 1;
+			}
+		}
+
 
 // ===========================================================================
 //                                Protected Methods
