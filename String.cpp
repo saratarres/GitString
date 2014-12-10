@@ -23,7 +23,7 @@
 
 //############################################################################
 //                                                                           #
-//                           Class Template_class                            #
+//                           Class String                                    #
 //                                                                           #
 //############################################################################
 
@@ -36,19 +36,19 @@
 // ===========================================================================
 String:: String(void)
 {
-	length =0;
+	length =4;
 	_string = NULL;
 	capacity = 0;
 }
 
-/*String ::String (const String& str)
+String ::String (const String& str)
 {
 
 	length = str.size();
-	_string = str.c_string();
+	//_string = str.c_string();
 	capacity = str.Get_capacity();
 	
-	}*/
+}
 
 String::String(const char* c_string)
 {
@@ -72,7 +72,7 @@ String::String(const char* c_string)
 String::~String(void)
 {
   delete _string;
-  _string = NULL;
+  _string = NULL ;
   length = 0;
   capacity = 0;
 }
@@ -82,21 +82,57 @@ String::~String(void)
 // ===========================================================================
 
 
-		int String :: size(void) const {
-		return length;
+		int String :: size(void) const{
+			return length;
 		}
 
 		int String :: Get_capacity (void) const{
-			return capacity;
+				return capacity;
+			
+
+
 		}
 
-		int String :: empty(int length){
-			if(length==0){
+		int String :: empty(){
+			if(size()==0){
 				return 0;
-			}if (length!=0){
+			}if (size()!=0){
 				return 1;
 			}
 		}
+
+		void String :: reserve (int n){
+			n = size();
+			if (capacity<n){
+				capacity=n;
+			}
+		}
+
+
+		void String :: clear(void)
+		{
+			length = 0;
+		}
+
+
+//Declaration of c_str() methods
+
+		const char* String ::  c_str() const {
+
+		int i;		
+		char* cstr = new char [ length +1 ];
+		cstr [length + 1] = '\0';
+		
+		for (i=0; i<length+1 ;i++){	
+		cstr[i] = _string[i];
+		}
+
+				
+		return cstr;
+
+		}
+		
+		
 
 
 // ===========================================================================
