@@ -100,6 +100,9 @@ class String
 
         String& operator= (const String& str);
 
+	void resize(int n);
+	void resize(int n, char c);
+
 
 
 

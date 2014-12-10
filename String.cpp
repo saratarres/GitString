@@ -81,7 +81,29 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
-
+void String:: resize(int n)
+{
+  if(length<n)
+  {
+    int i;
+    for(i=n;i<length;i++)
+    {
+      _string[i]=NULL;
+      length=n;
+    }
+  }
+  else
+  {
+    length = n;
+  }
+}
+    
+    
+    
+    
+  length=n;
+}
+  
 int String :: size(void) const
 {
   return length;
