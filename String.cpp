@@ -52,8 +52,8 @@ String::String (const String& str)
 
 String::String(const char* c_string)
 {
-	int i=0;
-	int j=0;
+	size_t i=0;
+	size_t j=0;
 	while(c_string[i]!='\0'){
 	  i++;
 	}
@@ -81,11 +81,11 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
-void String::resize(int n)
+void String::resize(size_t n)
 {
   if(length<n)
   {
-    int i;
+    size_t i;
     for(i=n;i<length;i++)
     {
       _string[i]=NULL;
@@ -100,40 +100,40 @@ void String::resize(int n)
   length=n;
 }
   
-int String::size(void) const
+size_t String::size(void) const
 {
   return length;
 }
                 
-int String::length(void) const
+size_t String::length(void) const
 {
   return length;
 }
-int String::max_size(void) const
+size_t String::max_size(void) const
 {
   return MAX_SIZE;
 }
 		
-int String::Get_capacity (void) const
+size_t String::Get_capacity (void) const
 {
   return capacity;
 }
 
-int String::size(void) const{
+size_t String::size(void) const{
   return length;
 }
 
-int String::length(void) const{
+size_t String::length(void) const{
   return length;
 }
 
-int String::Get_capacity (void) const{
+size_t String::Get_capacity (void) const{
   return capacity;
 }
 
 
 
-int String::empty()
+size_t String::empty()
 {
   if(size()==0)
   {
@@ -145,9 +145,8 @@ int String::empty()
 }
 
 
-void String::reserve (int n)
+void String::reserve (size_t n)
 {
-  n = size();
   if (capacity<n){
   capacity=n;
   }
@@ -164,7 +163,7 @@ void String::clear(void)
 
 	const char* String::c_str() const {
 
-		int i;		
+		size_t i;		
 		char* cstr = new char [ length +1 ];
 		cstr [length + 1] = '\0';
 		
@@ -183,19 +182,19 @@ void String::clear(void)
 
 		String& new_string = String& String(s);
 		
-		int i=0;
+		size_t i=0;
 		
 		while (s[i]!='\0'){
 			new_string.length = new_string.length + 1;
 			i++;
 		}
-		reserve(0);
-		new_string._string = new char[length + 1]; 
+		//reserve(0);
+		new_string._string = new char[capacity + 1]; 
 		
-		for (int j=0;j<length+1;j++){
+		for (size_t j=0;j<length+1;j++){
 			new_string._string[j]=s[j];
 		}
-		reserve(0);
+		//reserve(0);
 
 
 		return new_string;
