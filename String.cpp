@@ -34,14 +34,14 @@
 // ===========================================================================
 //                                  Constructors
 // ===========================================================================
-String:: String(void)
+String::String(void)
 {
 	length = 0;
 	_string = NULL;
 	capacity = 0;
 }
 
-String ::String (const String& str)
+String::String (const String& str)
 {
 
 	length = str.size();
@@ -81,60 +81,101 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
+void String::resize(int n)
+{
+  if(length<n)
+  {
+    int i;
+    for(i=n;i<length;i++)
+    {
+      _string[i]=NULL;
+      length=n;
+    }
+  }
+  else
+  {
+    length = n;
+  }
+ 
+  length=n;
+}
+  
+int String::size(void) const
+{
+  return length;
+}
+                
+int String::length(void) const
+{
+  return length;
+}
+int String::max_size(void) const
+{
+  return MAX_SIZE;
+}
+		
+int String::Get_capacity (void) const
+{
+  return capacity;
+}
 
-		int String :: size(void) const{
-			return length;
-		}
+int String::size(void) const{
+  return length;
+}
 
-        int String :: length(void) const{
-			return length;
-		}
+int String::length(void) const{
+  return length;
+}
 
-		int String :: Get_capacity (void) const{
-				return capacity;
-			
-
-
-		}
-
-		int String :: empty(){
-			if(size()==0){
-				return 0;
-			}if (size()!=0){
-				return 1;
-			}
-		}
-
-		void String :: reserve (int n){
-			n = size();
-			if (capacity<n){
-				capacity=n;
-			}
-		}
+int String::Get_capacity (void) const{
+  return capacity;
+}
 
 
-		void String :: clear(void)
-		{
-			length = 0;
-		}
+
+int String::empty()
+{
+  if(size()==0)
+  {
+    return 0;
+  }
+  if (size()!=0){
+    return 1;
+  }
+}
+
+
+void String::reserve (int n)
+{
+  n = size();
+  if (capacity<n){
+  capacity=n;
+  }
+}
+
+
+void String::clear(void)
+{
+  length = 0;
+}
 
 
 //Implementation of _str() methods
 
-		const char* String ::  c_str() const {
+	const char* String::c_str() const {
 
 		int i;		
 		char* cstr = new char [ length +1 ];
 		cstr [length + 1] = '\0';
 		
 		for (i=0; i<length+1 ;i++){	
-		cstr[i] = _string[i];
+		  cstr[i] = _string[i];
 		}
 
 				
 		return cstr;
 
-		}
+	}
 
 // Operator =
 
