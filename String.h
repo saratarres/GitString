@@ -94,7 +94,7 @@ class String
       //if length is 0 returns 0, if not returns 1.
         int empty ();
 
-    //Operator = for char*
+    //Operator =
         String& operator= (const char* s);
 
         String& operator= (const String& str);

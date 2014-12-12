@@ -36,7 +36,7 @@
 // ===========================================================================
 String:: String(void)
 {
-	length =4;
+	length = 0;
 	_string = NULL;
 	capacity = 0;
 }
@@ -85,9 +85,11 @@ String::~String(void)
 		int String :: size(void) const{
 			return length;
 		}
-                int String :: length(void) const{
+
+        int String :: length(void) const{
 			return length;
 		}
+
 		int String :: Get_capacity (void) const{
 				return capacity;
 			
@@ -135,7 +137,27 @@ String::~String(void)
 		}
 
 // Operator =
-	String& Operator= (const char* s){
+
+	String& String :: operator= (const char* s){
+
+		String& new_string = String& String(s);
+		
+		int i=0;
+		
+		while (s[i]!='\0'){
+			new_string.length = new_string.length + 1;
+			i++;
+		}
+		reserve(0);
+		new_string._string = new char[length + 1]; 
+		
+		for (int j=0;j<length+1;j++){
+			new_string._string[j]=s[j];
+		}
+		reserve(0);
+
+
+		return new_string;
 
 	}
 		
