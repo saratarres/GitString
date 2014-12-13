@@ -82,6 +82,12 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
+char* String::at(size_t pos)
+{
+  return &(_string[pos]);
+}
+
+
 void String::resize(size_t n)
 {
   int i;

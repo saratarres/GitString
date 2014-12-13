@@ -101,8 +101,11 @@ class String
 
         String& operator= (const String& str);
 
-	//Declaration of resize methode ! 
+	//Declaration of resize method ! 
 	void resize(size_t n);
+
+	//Declaration of at method !!!
+	char* at(size_t pos);
 
 
 
