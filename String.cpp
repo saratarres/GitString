@@ -17,6 +17,7 @@
 //                                 Project Files
 // ===========================================================================
 #include "String.h"
+#include <string.h>
 
 
 
@@ -84,11 +85,18 @@ String::~String(void)
 void String::resize(size_t n)
 {
   int i;
-  for(i=n;i<length;i++)
+  char* new_string = new char* [n];
+  for(i=0;i<n;i++)
   {
-  _string[i]=NULL;
-  length=n;
+  new_string[i]=_string[i];
   }
+  delete _string;
+  _string = new char* [n];
+  for(i=0;i<n;i++)
+  {
+   _string[i]=new_string[i];
+  }
+  delete new_string;
 
 }
 

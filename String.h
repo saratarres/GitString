@@ -15,6 +15,7 @@
 // ===========================================================================
 #include <cstdio>
 #include <cstdlib>
+#include <string.h>
 
 
 
@@ -100,6 +101,7 @@ class String
 
         String& operator= (const String& str);
 
+	//Declaration of resize methode ! 
 	void resize(size_t n);
 
 
