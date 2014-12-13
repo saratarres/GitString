@@ -45,7 +45,8 @@ int main(int argc, char* argv[])
 	printf("%d\n",res);
 	res = Nouvelle_chaine.empty(0);
 	printf("%d\n",res);*/
-        String NewString = String("holachicos");
+    
+    String NewString = String("holachicos");
 	printf("%d\n",NewString.size());
 
 	printf(" %d\n",Nouvelle_chaine.size());

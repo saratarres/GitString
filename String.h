@@ -64,17 +64,17 @@ class String
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-    int Get_capacity (void) const;
-    int size(void) const ;
-    int length(void) const; //size and length are twin brother :) 
-    int max_size(void) const;
+    size_t Get_capacity (void) const;
+    size_t size(void) const ;
+    size_t length(void) const; //size and length are twin brother :) 
+    size_t max_size(void) const;
 
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
 
       //Declaration of reserve (capacity setter only if needed)
-        void reserve (int n);
+        void reserve (size_t n);
 
     // =======================================================================
     //                                Operators
@@ -93,15 +93,14 @@ class String
 
     //Declaration of empty Method
       //if length is 0 returns 0, if not returns 1.
-        int empty ();
+        size_t empty ();
 
-    //Operator = for char*
+    //Operator =
         String& operator= (const char* s);
 
         String& operator= (const String& str);
 
-	void resize(int n);
-	void resize(int n, char c);
+	void resize(size_t n);
 
 
 
@@ -143,10 +142,10 @@ class String
     // =======================================================================
 
 
-	int length;
-	static int MAX_SIZE;
+	size_t length;
+	static size_t MAX_SIZE;
 	char* _string;
-	int capacity;
+	size_t capacity;
 
 };
 
