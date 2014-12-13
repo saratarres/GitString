@@ -47,12 +47,13 @@ int main(int argc, char* argv[])
 	printf("%d\n",res);*/
     
     String NewString = String("holachicos");
+    NewString.resize(4);
 	printf("%d\n",NewString.size());
 
-	printf(" %d\n",Nouvelle_chaine.size());
+	//printf(" %d\n",Nouvelle_chaine.size());
 
-	Nouvelle_chaine.clear();
-	printf(" %d",Nouvelle_chaine.size());
+	//Nouvelle_chaine.clear();
+	//printf(" %d",Nouvelle_chaine.size());
 
 
 

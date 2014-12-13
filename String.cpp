@@ -97,6 +97,7 @@ void String::resize(size_t n)
    _string[i]=new_string[i];
   }
   delete new_string;
+  length=n;
 
 }
 
