@@ -31,7 +31,7 @@
 // ===========================================================================
 //                         Definition of static attributes
 // ===========================================================================
-
+size_t String::MAX_SIZE=100;
 // ===========================================================================
 //                                  Constructors
 // ===========================================================================
@@ -85,13 +85,13 @@ String::~String(void)
 void String::resize(size_t n)
 {
   int i;
-  char* new_string = new char* [n];
+  char* new_string = new char[n];
   for(i=0;i<n;i++)
   {
   new_string[i]=_string[i];
   }
   delete _string;
-  _string = new char* [n];
+  _string = new char[n];
   for(i=0;i<n;i++)
   {
    _string[i]=new_string[i];
@@ -105,7 +105,7 @@ size_t String::size(void) const
   return length;
 }
                 
-size_t String::length(void) const
+size_t String::Get_length(void) const
 {
   return length;
 }
@@ -118,20 +118,6 @@ size_t String::Get_capacity (void) const
 {
   return capacity;
 }
-
-size_t String::size(void) const{
-  return length;
-}
-
-size_t String::length(void) const{
-  return length;
-}
-
-size_t String::Get_capacity (void) const{
-  return capacity;
-}
-
-
 
 size_t String::empty()
 {
@@ -178,7 +164,7 @@ void String::clear(void)
 
 // Operator =
 
-	String& String :: operator= (const char* s){
+/*String& String :: operator= (const char* s){
 
 		String& new_string = String& String(s);
 		
@@ -211,7 +197,7 @@ String& String :: operator= (const String& str)
 }
 
 		
-
+*/
 
 // ===========================================================================
 //                                Protected Methods
