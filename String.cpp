@@ -170,17 +170,26 @@ void String::clear(void)
 	}
 
 
+//Implementation of Operator= Student 1
+
 String& String :: operator= (const String& str)
 {
 
+//Recovering size of str 
+
   int taille = str->length();
   int i;
+
+
+// Verification that the size is not more longer than MAX_SIZE
 
   if (taille > MAX_SIZE)
     {
     printf("The length is too long !!!");
     return *this ;
     }
+
+// Verification that the size is not more longer than capacity
 
   else if (taille < MAX_SIZE && taille > capacity)
     {
@@ -189,10 +198,13 @@ String& String :: operator= (const String& str)
     
     for (i=0;i<taille;i++)
       {
-	this->c_str()[i]= str->c_str()[i];
+		this->c_str()[i]= str->c_str()[i];
       }
-   return *this;
+  	 return *this;
   }
+
+
+// Replace string b by string a 
 
   else {
     for(i=0;i<this->length;i++){
