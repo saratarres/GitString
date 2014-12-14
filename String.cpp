@@ -189,7 +189,7 @@ String& String :: operator= (const String& str)
     
     for (i=0;i<taille;i++)
       {
-	this->c_srt()[i]= str->c_str()[i];
+	this->c_str()[i]= str->c_str()[i];
       }
    return *this;
   }
