@@ -136,9 +136,11 @@ String::~String(void)
 String& String :: operator= (const String& str)
 {
 
+		length = str.length;
+		reserve(length);
 	  _string = str._string ;
 		
-		return str ;
+		return _string ;
 }
 
 		
