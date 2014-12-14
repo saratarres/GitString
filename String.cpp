@@ -149,7 +149,7 @@ void String::reserve (size_t n)
 void String::clear(void)
 {
   length = 0;
-}
+} 
 
 
 //Implementation of _str() methods
@@ -168,6 +168,46 @@ void String::clear(void)
 		return cstr;
 
 	}
+
+
+String& String :: operator= (const String& str)
+{
+
+  int taille = str.length();
+  int i;
+
+  if (taille > MAX_SIZE)
+    {
+    printf("The length is too long !!!");
+    return *this ;
+    }
+
+  else if (taille < MAX_SIZE && taille > capacity)
+    {
+    printf("The length is longer than the capacity !!");
+    this.reserve(taille);
+    
+    for (i=0;i<this.length();i++)
+      {
+	this.c_srt()[i]= str.c_str()[i];
+      }
+   return *this;
+  }
+
+  else {
+    for(i=0;i<this.length;i++){
+      this.c_str()[i]=str.c_str()[i];
+    }
+
+    return *this;
+  }
+    
+    
+}
+
+
+
+
 
 // Operator =
 
