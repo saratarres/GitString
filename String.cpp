@@ -116,6 +116,14 @@ size_t String::Get_length(void) const
 {
   return length;
 }
+
+char* String :: Get_string(void) const 
+{
+
+	return _string;
+}
+
+
 size_t String::max_size(void) const
 {
   return MAX_SIZE;
