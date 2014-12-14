@@ -69,6 +69,7 @@ class String
     size_t size(void) const ;
     size_t Get_length(void) const; //size and length are twin brother :) 
     size_t max_size(void) const;
+		char* Get_string(void) const; 
 
     // =======================================================================
     //                            Accessors: setters
