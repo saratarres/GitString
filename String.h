@@ -15,6 +15,7 @@
 // ===========================================================================
 #include <cstdio>
 #include <cstdlib>
+#include <string.h>
 
 
 
@@ -66,7 +67,7 @@ class String
     // =======================================================================
     size_t Get_capacity (void) const;
     size_t size(void) const ;
-    size_t length(void) const; //size and length are twin brother :) 
+    size_t Get_length(void) const; //size and length are twin brother :) 
     size_t max_size(void) const;
 
     // =======================================================================
@@ -100,8 +101,11 @@ class String
 
         String& operator= (const String& str);
 
+	//Declaration of resize method ! 
 	void resize(size_t n);
-	void resize(size_t n, char c);
+
+	//Declaration of at method !!!
+	char* at(size_t pos);
 
 
 

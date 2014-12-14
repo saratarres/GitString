@@ -17,6 +17,7 @@
 //                                 Project Files
 // ===========================================================================
 #include "String.h"
+#include <string.h>
 
 
 
@@ -81,31 +82,37 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
+char* String::at(size_t pos)
+{
+  return &(_string[pos]);
+}
+
+
 void String::resize(size_t n)
 {
-  if(length<n)
+  int i;
+  char* new_string = new char[n];
+  for(i=0;i<n;i++)
   {
-    size_t i;
-    for(i=n;i<length;i++)
-    {
-      _string[i]=NULL;
-      length=n;
-    }
+  new_string[i]=_string[i];
   }
-  else
+  delete _string;
+  _string = new char[n];
+  for(i=0;i<n;i++)
   {
-    length = n;
+   _string[i]=new_string[i];
   }
- 
+  delete new_string;
   length=n;
+
 }
-  
+
 size_t String::size(void) const
 {
   return length;
 }
                 
-size_t String::length(void) const
+size_t String::Get_length(void) const
 {
   return length;
 }
@@ -118,8 +125,6 @@ size_t String::Get_capacity (void) const
 {
   return capacity;
 }
-
-
 
 
 size_t String::empty()
@@ -173,7 +178,7 @@ void String::reserve (size_t n)
 void String::clear(void)
 {
   length = 0;
-}
+} 
 
 
 //Implementation of _str() methods
@@ -193,9 +198,88 @@ void String::clear(void)
 
 	}
 
+
+//Implementation of Operator= Student 1
+
+String& String :: operator= (const String& str)
+{
+
+//Recovering size of str 
+
+  int taille = str->length();
+  int i;
+
+
+// Verification that the size is not longer than MAX_SIZE
+
+  if (taille > MAX_SIZE)
+    {
+    printf("The length is too long !!!");
+    return *this ;
+    }
+
+// Verification that the size is not more longer than capacity
+
+  else if (taille < MAX_SIZE && taille > capacity)
+    {
+    printf("The length is longer than the capacity !!");
+    this->reserve(taille);
+    
+    for (i=0;i<taille;i++)
+      {
+		this->c_str()[i]= str->c_str()[i];
+      }
+  	 return *this;
+  }
+
+
+// Replace string b by string a 
+
+  else {
+    for(i=0;i<this->length;i++){
+      this->c_str()[i]=str->c_str()[i];
+    }
+
+    return *this;
+  }
+    
+    
+}
+
+
+//Implementation of operator+= methods 
+
+String& String :: operator+= (char c) 
+{
+
+//Creation of new string 
+
+  String my_new_string = String();
+  my_new_string.capacity = this.capacity();
+  my_new_string.length = this.size() +1 ;
+
+  int i;
+
+//Replace the character of this in my_new_string
+
+  for (i =0;i< this->size();i++){
+    my_new_string->c_str()[i] = this->c_str()[i];
+  }
+
+//Add char c
+
+  my_new_string->c_str()[length] = c;
+  
+  return my_new_string;
+
+}
+
+
+
+
 // Operator =
 
-	String& String :: operator= (const char* s){
+/*String& String :: operator= (const char* s){
 
 		String& new_string = String& String(s);
 		
@@ -222,13 +306,15 @@ void String::clear(void)
 String& String :: operator= (const String& str)
 {
 
+		length = str.length;
+		reserve(length);
 	  _string = str._string ;
 		
-		return str ;
+		return _string ;
 }
 
 		
-
+*/
 
 // ===========================================================================
 //                                Protected Methods
