@@ -214,7 +214,7 @@ String& String :: operator= (const String& str)
 
 //Recovering size of str 
 
-  int taille = str->length();
+  int taille = str.Get_length();
   int i;
 
 
