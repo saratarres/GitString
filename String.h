@@ -101,6 +101,8 @@ class String
 
         String& operator= (const String& str);
 
+				String& operator+= (char c);
+
 	//Declaration of resize method ! 
 	void resize(size_t n);
 

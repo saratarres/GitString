@@ -116,6 +116,14 @@ size_t String::Get_length(void) const
 {
   return length;
 }
+
+char* String :: Get_string(void) const 
+{
+
+	return _string;
+}
+
+
 size_t String::max_size(void) const
 {
   return MAX_SIZE;
@@ -228,7 +236,7 @@ String& String :: operator= (const String& str)
     
     for (i=0;i<taille;i++)
       {
-		this->c_str()[i]= str->c_str()[i];
+		_string[i] = str.Get_string()[i];
       }
   	 return *this;
   }
@@ -238,7 +246,7 @@ String& String :: operator= (const String& str)
 
   else {
     for(i=0;i<this->length;i++){
-      this->c_str()[i]=str->c_str()[i];
+      _string[i] =str.Get_string()[i];
     }
 
     return *this;
