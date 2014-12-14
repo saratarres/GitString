@@ -198,7 +198,7 @@ String& String :: operator= (const String& str)
     
     for (i=0;i<taille;i++)
       {
-		this->c_str()[i]= str->c_str()[i];
+		_string[i] = str.Get_string()[i];
       }
   	 return *this;
   }
@@ -208,7 +208,7 @@ String& String :: operator= (const String& str)
 
   else {
     for(i=0;i<this->length;i++){
-      this->c_str()[i]=str->c_str()[i];
+      _string[i] =str.Get_string()[i];
     }
 
     return *this;
