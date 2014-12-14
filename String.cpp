@@ -173,7 +173,7 @@ void String::clear(void)
 String& String :: operator= (const String& str)
 {
 
-  int taille = str.length();
+  int taille = str->length();
   int i;
 
   if (taille > MAX_SIZE)
@@ -185,18 +185,18 @@ String& String :: operator= (const String& str)
   else if (taille < MAX_SIZE && taille > capacity)
     {
     printf("The length is longer than the capacity !!");
-    this.reserve(taille);
+    this->reserve(taille);
     
-    for (i=0;i<this.length();i++)
+    for (i=0;i<taille;i++)
       {
-	this.c_srt()[i]= str.c_str()[i];
+	this->c_srt()[i]= str->c_str()[i];
       }
    return *this;
   }
 
   else {
-    for(i=0;i<this.length;i++){
-      this.c_str()[i]=str.c_str()[i];
+    for(i=0;i<this->length;i++){
+      this->c_str()[i]=str->c_str()[i];
     }
 
     return *this;
