@@ -90,7 +90,7 @@ char* String::at(size_t pos)
 
 void String::resize(size_t n)
 {
-  int i;
+  size_t i;
   char* new_string = new char[n];
   for(i=0;i<n;i++)
   {
@@ -158,7 +158,7 @@ void String::reserve (size_t n)
 
   //Read the original string and we copy the chars into a temporary one.
   for (i=0; i<length; i++){
-  	tmp[i]=_string[i]
+  	tmp[i]=_string[i];
   }
   while(i>=length && i<capacity){
   	tmp[i]='0';
@@ -170,8 +170,9 @@ void String::reserve (size_t n)
   for(i=0;i<n;i++){
   	_string[i]=tmp[i];
   }
+  delete[] tmp; 
   }
-  delete [] tmp; 
+
 }
 
 
