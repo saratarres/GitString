@@ -263,20 +263,20 @@ String& String :: operator+= (char c)
 //Creation of new string 
 
   String my_new_string = String();
-  my_new_string.capacity = this.capacity();
-  my_new_string.length = this.size() +1 ;
+  my_new_string.capacity = capacity;
+  my_new_string.length = length +1 ;
 
   int i;
 
 //Replace the character of this in my_new_string
 
-  for (i =0;i< this->size();i++){
-    my_new_string->c_str()[i] = this->c_str()[i];
+  for (i =0;i< length ;i++){
+    my_new_string.Get_string()[i] = _string[i];
   }
 
 //Add char c
 
-  my_new_string->c_str()[length] = c;
+  my_new_string.Get_string()[length] = c;
   
   return my_new_string;
 
