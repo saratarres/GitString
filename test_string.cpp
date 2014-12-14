@@ -48,12 +48,12 @@ int main(int argc, char* argv[])
     
     String NewString = String("holachicos");
     NewString.resize(4);
-	printf("%d\n",NewString.size());
-	printf("%d\n",NewString.at(4));
+	//printf("%d\n",NewString.size());
+	//printf("%d\n",NewString.at(4));
 
 	NewString.resize(8);
-	printf("%d\n",NewString.size());
-	printf("%d\n",NewString.at(4));
+	//printf("%d\n",NewString.size());
+	//printf("%d\n",NewString.at(4));
 
 	//printf(" %d\n",Nouvelle_chaine.size());
 
