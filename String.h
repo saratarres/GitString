@@ -15,6 +15,7 @@
 // ===========================================================================
 #include <cstdio>
 #include <cstdlib>
+#include <string.h>
 
 
 
@@ -64,11 +65,17 @@ class String
     // =======================================================================
     //                            Accessors: getters
     // =======================================================================
-    int Get_capacity (void) const;
-		int size(void) const ;
+    size_t Get_capacity (void) const;
+    size_t size(void) const ;
+    size_t Get_length(void) const; //size and length are twin brother :) 
+    size_t max_size(void) const;
+
     // =======================================================================
     //                            Accessors: setters
     // =======================================================================
+
+      //Declaration of reserve (capacity setter only if needed)
+        void reserve (size_t n);
 
     // =======================================================================
     //                                Operators
@@ -78,27 +85,29 @@ class String
     //                              Public Methods
     // =======================================================================
 		
-		//Declaration of clear method
+
 		void clear();
 
-		//Declaration of c_str() Method
+    //Declaration of c_str() Method
 		const char* c_str() const;
 
-		//declaration of of operatoir Method
 
-		String& operator= (const String& str);
+    //Declaration of empty Method
+      //if length is 0 returns 0, if not returns 1.
+        size_t empty ();
+
+    //Operator =
+        String& operator= (const char* s);
+
+        String& operator= (const String& str);
+
+	//Declaration of resize method ! 
+	void resize(size_t n);
+
+	//Declaration of at method !!!
+	char* at(size_t pos);
 
 
-	
-	//Declaration of clear Method
-		//void clear(void);
-
-        //Declaration of empty Method
-          //if length is 0 returns 0, if not returns 1.
-        int empty ();
-
-        //Declaration of reserve
-        void reserve (int n);
 
 
 
@@ -138,10 +147,10 @@ class String
     // =======================================================================
 
 
-	int length;
-	static int MAX_SIZE;
+	size_t length;
+	static size_t MAX_SIZE;
 	char* _string;
-	int capacity;
+	size_t capacity;
 
 };
 

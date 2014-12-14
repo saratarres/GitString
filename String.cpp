@@ -17,6 +17,7 @@
 //                                 Project Files
 // ===========================================================================
 #include "String.h"
+#include <string.h>
 
 
 
@@ -30,18 +31,18 @@
 // ===========================================================================
 //                         Definition of static attributes
 // ===========================================================================
-
+size_t String::MAX_SIZE=100;
 // ===========================================================================
 //                                  Constructors
 // ===========================================================================
-String:: String(void)
+String::String(void)
 {
-	length =4;
+	length = 0;
 	_string = NULL;
 	capacity = 0;
 }
 
-String ::String (const String& str)
+String::String (const String& str)
 {
 
 	length = str.size();
@@ -52,8 +53,8 @@ String ::String (const String& str)
 
 String::String(const char* c_string)
 {
-	int i=0;
-	int j=0;
+	size_t i=0;
+	size_t j=0;
 	while(c_string[i]!='\0'){
 	  i++;
 	}
@@ -81,56 +82,117 @@ String::~String(void)
 //                                 Public Methods
 // ===========================================================================
 
-
-		int String :: size(void) const{
-			return length;
-		}
-
-		int String :: Get_capacity (void) const{
-				return capacity;
-			
+char* String::at(size_t pos)
+{
+  return &(_string[pos]);
+}
 
 
-		}
+void String::resize(size_t n)
+{
+  int i;
+  char* new_string = new char[n];
+  for(i=0;i<n;i++)
+  {
+  new_string[i]=_string[i];
+  }
+  delete _string;
+  _string = new char[n];
+  for(i=0;i<n;i++)
+  {
+   _string[i]=new_string[i];
+  }
+  delete new_string;
+  length=n;
 
-		int String :: empty(){
-			if(size()==0){
-				return 0;
-			}if (size()!=0){
-				return 1;
-			}
-		}
+}
 
-		void String :: reserve (int n){
-			n = size();
-			if (capacity<n){
-				capacity=n;
-			}
-		}
+size_t String::size(void) const
+{
+  return length;
+}
+                
+size_t String::Get_length(void) const
+{
+  return length;
+}
+size_t String::max_size(void) const
+{
+  return MAX_SIZE;
+}
+		
+size_t String::Get_capacity (void) const
+{
+  return capacity;
+}
+
+size_t String::empty()
+{
+  if(size()==0)
+  {
+    return 0;
+  }
+  if (size()!=0){
+    return 1;
+  }
+}
 
 
-		void String :: clear(void)
-		{
-			length = 0;
-		}
+void String::reserve (size_t n)
+{
+  if (capacity<n){
+  capacity=n;
+  }
+}
+
+
+void String::clear(void)
+{
+  length = 0;
+}
 
 
 //Implementation of _str() methods
 
-		const char* String ::  c_str() const {
+	const char* String::c_str() const {
 
-		int i;		
+		size_t i;		
 		char* cstr = new char [ length +1 ];
 		cstr [length + 1] = '\0';
 		
 		for (i=0; i<length+1 ;i++){	
-		cstr[i] = _string[i];
+		  cstr[i] = _string[i];
 		}
 
 				
 		return cstr;
 
+	}
+
+// Operator =
+
+/*String& String :: operator= (const char* s){
+
+		String& new_string = String& String(s);
+		
+		size_t i=0;
+		
+		while (s[i]!='\0'){
+			new_string.length = new_string.length + 1;
+			i++;
 		}
+		//reserve(0);
+		new_string._string = new char[capacity + 1]; 
+		
+		for (size_t j=0;j<length+1;j++){
+			new_string._string[j]=s[j];
+		}
+		//reserve(0);
+
+
+		return new_string;
+
+	}
 		
 
 String& String :: operator= (const String& str)
@@ -144,7 +206,7 @@ String& String :: operator= (const String& str)
 }
 
 		
-
+*/
 
 // ===========================================================================
 //                                Protected Methods
