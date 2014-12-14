@@ -134,6 +134,7 @@ size_t String::Get_capacity (void) const
   return capacity;
 }
 
+
 size_t String::empty()
 {
   if(size()==0)
@@ -145,12 +146,40 @@ size_t String::empty()
   }
 }
 
-
+/* This method stores a string in the Heap with the content of the ancient one but
+with the new capacity.
+Parameter: n that's the value that we want as capacity.
+Return: no return
+*/
 void String::reserve (size_t n)
 {
-  if (capacity<n){
-  capacity=n;
+  if (n>MAX_SIZE){
+  	printf("ERROR\n");
+  	printf("The string will exceed MAX_SIZE.\n");
+
   }
+
+  if (n<MAX_SIZE && capacity<n){
+  capacity=n;
+  char * tmp = new char [capacity];
+  size_t i;
+
+  //Read the original string and we copy the chars into a temporary one.
+  for (i=0; i<length; i++){
+  	tmp[i]=_string[i]
+  }
+  while(i>=length && i<capacity){
+  	tmp[i]='0';
+  }
+  
+  //Write a copy of the temporary string into the real one
+  _string=new char[n];
+  length=n;
+  for(i=0;i<n;i++){
+  	_string[i]=tmp[i];
+  }
+  }
+  delete [] tmp; 
 }
 
 
@@ -189,7 +218,7 @@ String& String :: operator= (const String& str)
   int i;
 
 
-// Verification that the size is not more longer than MAX_SIZE
+// Verification that the size is not longer than MAX_SIZE
 
   if (taille > MAX_SIZE)
     {
