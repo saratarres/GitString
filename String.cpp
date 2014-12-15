@@ -117,7 +117,7 @@ size_t String::Get_length(void) const
   return length;
 }
 
-char* String :: Get_string(void) const 
+char* String::Get_string(void) const 
 {
 
 	return _string;
@@ -256,6 +256,30 @@ String& String :: operator= (const String& str)
 }
 
 
+//Implementation of operator= Student 3
+
+
+String& String :: operator= (const char* s){
+    
+    size_t this->length=s.Get_length();
+    
+    size_t i=0;
+    
+    reserve(this->length);
+
+    char * this->_string = new char[capacity + 1]; 
+    
+    for (size_t j=0;j<length+1;j++){
+      this->_string[j]=s[j];
+    }
+    this->capacity=Get_capacity();
+    return *this;
+
+  }
+
+
+
+
 //Implementation of operator+= methods 
 
 String& String :: operator+= (char c) 
@@ -286,31 +310,7 @@ String& String :: operator+= (char c)
 
 
 
-// Operator =
-
-/*String& String :: operator= (const char* s){
-
-		String& new_string = String& String(s);
-		
-		size_t i=0;
-		
-		while (s[i]!='\0'){
-			new_string.length = new_string.length + 1;
-			i++;
-		}
-		//reserve(0);
-		new_string._string = new char[capacity + 1]; 
-		
-		for (size_t j=0;j<length+1;j++){
-			new_string._string[j]=s[j];
-		}
-		//reserve(0);
-
-
-		return new_string;
-
-	}
-		
+/*
 
 String& String :: operator= (const String& str)
 {
