@@ -119,7 +119,6 @@ size_t String::Get_length(void) const
 
 char* String::Get_string(void) const 
 {
-
 	return _string;
 }
 

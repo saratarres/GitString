@@ -46,8 +46,8 @@ int main(int argc, char* argv[])
 	Nouvelle_chaine  = NewString;
 	printf(" %s\n", Nouvelle_chaine.Get_string());
 	char a = 'c';
-	Nouvelle_chaine += a;
-	printf(" %s\n", Nouvelle_chaine.Get_string());
+	//Nouvelle_chaine += a;
+	//printf(" %s\n", Nouvelle_chaine.Get_string());
 
 	/*	printf(" %d",Nouvelle_chaine.size());
 	int res = Nouvelle_chaine.empty(3);
@@ -78,8 +78,8 @@ int main(int argc, char* argv[])
 	s[2]='I';
 	s[3]='!';
 
-	String MyTestString;
-	printf("%s\n",MyTestString.operator=(s);
+	String MyTestString = s;
+	printf("%s\n",s);
 
 	delete [] s;
 
