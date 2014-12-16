@@ -90,6 +90,18 @@ int main(int argc, char* argv[])
 	//Nouvelle_chaine.clear();
 	//printf(" %d",Nouvelle_chaine.size());
 
+	//Operator = TEST:
+	char * s = new char[3];
+
+	s[1]='H';
+	s[2]='I';
+	s[3]='!';
+
+	String MyTestString;
+	printf("%s\n",MyTestString.operator=(s);
+
+	delete [] s;
+
 
 
   return 0;
