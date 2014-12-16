@@ -261,16 +261,16 @@ String& String :: operator= (const String& str)
 
 String& String :: operator= (const char* s){
     
-    size_t this->length=s.Get_length();
+    this->length=Get_length();
     
     size_t i=0;
     
     reserve(this->length);
 
-    char * this->_string = new char[capacity + 1]; 
+     this->_string = new char[capacity + 1]; 
     
     for (size_t j=0;j<length+1;j++){
-      this->_string[j]=s[j];
+      _string[j]=s[j];
     }
     this->capacity=Get_capacity();
     return *this;
