@@ -41,13 +41,32 @@ int main(int argc, char* argv[])
   printf("Hello World, here the geeks are !\n");
 	String Nouvelle_chaine ("holachicas");
 	int i ;
+
+	//Test clear methods
+	//Nouvelle_chaine.clear();
+	//printf("%d	%s\n", Nouvelle_chaine.size(),Nouvelle_chaine.Get_string());
+	
+
+	//Test size methods 
+
+	printf("%d\n", Nouvelle_chaine.size());
+
+	//test Get_string
+ 
 	printf(" %s\n", Nouvelle_chaine.Get_string());
+
+	//test operator=
+
 	String NewString ("holachicos");
 	Nouvelle_chaine  = NewString;
 	printf(" %s\n", Nouvelle_chaine.Get_string());
-	char a = 'c';
+		
+	//test operator+
+
+	char a = 'b';
 	Nouvelle_chaine += a;
 	printf(" %s\n", Nouvelle_chaine.Get_string());
+	printf("%d\n", Nouvelle_chaine.size());
 
 	/*	printf(" %d",Nouvelle_chaine.size());
 	int res = Nouvelle_chaine.empty(3);
