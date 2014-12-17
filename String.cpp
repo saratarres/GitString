@@ -261,19 +261,13 @@ String& String :: operator= (const String& str)
 
 String& String :: operator= (const char* s){
     
-    this->length=3;
-   // size_t k=0;
-   // while(s[k]!='!'){
-    //  this->length=this->length+1;
-    //}
-
+    this->length=Get_length();
+   
     printf("%d\n", this->length);
-    
-    size_t i=0;
     
     reserve(this->length);
 
-     this->_string = new char[this->length + 1]; 
+     this->_string = new char[this->length]; 
     
     for (size_t j=0;j<length;j++){
       _string[j]=s[j];
@@ -327,6 +321,33 @@ String& String :: operator+= (char c)
 // Operator += (string)
 
 String& String::operator+= (const String& str){
+
+  size_t length2=str.Get_length();
+  size_t i;
+  char * tmp = new char [length2];
+  char * _s = str.Get_string();
+  for (i = 0; i < length2; ++i)
+  {
+   tmp[i]=_s[i]; 
+  }
+  size_t lengthplus=length+length2;
+  char * _stringplus = new char [lengthplus];
+  for ( i=0; i < length ; i++)
+  {
+    _stringplus[i]=_string[i];
+  }
+  for (i = length; i < length2; i++)
+  {
+    _stringplus[i]=tmp[i];
+  }
+
+  this->_string=_stringplus;
+  this->length=lengthplus;
+  this->capacity=lengthplus;
+
+  return *this;
+
+
   
 }
 

@@ -55,26 +55,8 @@ int main(int argc, char* argv[])
  
 	printf(" %s\n", Nouvelle_chaine.Get_string());
 
-	//test operator=
-
-	String NewString ("holachicos");
-	Nouvelle_chaine  = NewString;
-	printf(" %s\n", Nouvelle_chaine.Get_string());
-
-	char a = 'c';
-	//Nouvelle_chaine += a;
-	//printf(" %s\n", Nouvelle_chaine.Get_string());
-
-		
-	//test operator+
-
-	a = 'b';
-	Nouvelle_chaine += a;
-	printf(" %s\n", Nouvelle_chaine.Get_string());
-	printf("%d\n", Nouvelle_chaine.size());
-
-
-	/*	printf(" %d",Nouvelle_chaine.size());
+	/*	
+	printf(" %d",Nouvelle_chaine.size());
 	int res = Nouvelle_chaine.empty(3);
 	printf("%d\n",res);
 	res = Nouvelle_chaine.empty(0);
@@ -94,16 +76,45 @@ int main(int argc, char* argv[])
 	//Nouvelle_chaine.clear();
 	//printf(" %d",Nouvelle_chaine.size());
 
-	//Operator = TEST:
+
+	char a = 'c';
+	//Nouvelle_chaine += a;
+	//printf(" %s\n", Nouvelle_chaine.Get_string());
+
+		
+	//------------------------------ TEST operator+ ----------------------------
+	
+	a = 'b';
+	Nouvelle_chaine += a;
+	printf(" %s\n", Nouvelle_chaine.Get_string());
+	printf("%d\n", Nouvelle_chaine.size());
+
+
+	String FirstString ("hola");
+	String SecondString ("chicos");
+	String StringTotal = FirstString += SecondString;
+	printf("%s\n", StringTotal.Get_string());
+
+
+
+
+	//----------------------------- Operator = TEST: ----------------------------
+
+	String NewString ("holachicos");
+	Nouvelle_chaine  = NewString;
+	printf(" %s\n", Nouvelle_chaine.Get_string());
+
+
+
 	char * s = "HI!";
 /*
+	char * s = new char[3];
 	s[0]='H';
 	s[1]='I';
 	s[2]='!';
 	*/
 
 	String MyTestString = (s);
-	//String MyTestString2 = MyTestString + s;
 	printf("%s\n", MyTestString.Get_string());
 
 	//delete [] s;
