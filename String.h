@@ -102,7 +102,14 @@ class String
 
         String& operator= (const String& str);
 
-				String& operator+= (char c);
+
+    //Operator +=
+	
+    String& operator+= (char c);
+    
+    String& operator+= (const String& str);
+
+    
 
 	//Declaration of resize method ! 
 	void resize(size_t n);
@@ -110,7 +117,8 @@ class String
 	//Declaration of at method !!!
 	char* at(size_t pos);
 
-
+    //Operator []
+    char& operator[] (size_t pos);
 
 
 

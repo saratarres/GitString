@@ -261,18 +261,24 @@ String& String :: operator= (const String& str)
 
 String& String :: operator= (const char* s){
     
-    this->length=Get_length();
+    this->length=3;
+   // size_t k=0;
+   // while(s[k]!='!'){
+    //  this->length=this->length+1;
+    //}
+
+    printf("%d\n", this->length);
     
     size_t i=0;
     
     reserve(this->length);
 
-     this->_string = new char[capacity + 1]; 
+     this->_string = new char[this->length + 1]; 
     
-    for (size_t j=0;j<length+1;j++){
+    for (size_t j=0;j<length;j++){
       _string[j]=s[j];
     }
-    this->capacity=Get_capacity();
+    //this->capacity=Get_capacity();
     return *this;
 
   }
@@ -318,8 +324,34 @@ String& String :: operator+= (char c)
 
 }
 
+// Operator += (string)
+
+String& String::operator+= (const String& str){
+  
+}
 
 
+/*
+//Operator []: Returns the adress of character located in a position:
+
+char& String::operator[] (size_t pos){
+
+  char* character;
+
+  length=Get_length();
+
+  _string=Get_string();
+
+  size_t i;
+
+  for(i=0; i<this->length;i++){
+    if (i==pos){
+      return this->_string[i];
+    }
+  }
+
+}
+*/
 
 /*
 

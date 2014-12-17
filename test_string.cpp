@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
 		
 	//test operator+
 
-	char a = 'b';
+	a = 'b';
 	Nouvelle_chaine += a;
 	printf(" %s\n", Nouvelle_chaine.Get_string());
 	printf("%d\n", Nouvelle_chaine.size());
@@ -95,16 +95,18 @@ int main(int argc, char* argv[])
 	//printf(" %d",Nouvelle_chaine.size());
 
 	//Operator = TEST:
-	char * s = new char[3];
+	char * s = "HI!";
+/*
+	s[0]='H';
+	s[1]='I';
+	s[2]='!';
+	*/
 
-	s[1]='H';
-	s[2]='I';
-	s[3]='!';
+	String MyTestString = (s);
+	//String MyTestString2 = MyTestString + s;
+	printf("%s\n", MyTestString.Get_string());
 
-	String MyTestString = s;
-	printf("%s\n",s);
-
-	delete [] s;
+	//delete [] s;
 
 
 
