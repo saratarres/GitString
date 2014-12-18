@@ -192,23 +192,32 @@ void String::clear(void)
 
 //Implementation of c_str() methods
 
-	const char* String::c_str() const {
+const char* String::c_str() const {
 
-		size_t i;		
-		char* cstr = new char [ length +1 ];
-		cstr [length + 1] = '\0';
+  size_t i;		
+  char* cstr = new char [ length +1 ];
+  cstr [length + 1] = '\0';
 		
-		for (i=0; i<length+1 ;i++){	
-		  cstr[i] = _string[i];
-		}
+  for (i=0; i<length+1 ;i++){	
+    cstr[i] = _string[i];
+  }
 
 				
-		return cstr;
+   return cstr;
 
-	}
+}
+
+// =======================================================================
+//                                Operators
+// =======================================================================
 
 
-//Implementation of Operator= Student 1
+//////////////////////////////////////////////////////////////////////////
+//                        Implementation of Operator= methods
+//////////////////////////////////////////////////////////////////////////
+
+
+//Student 1
 
 String& String :: operator= (const String& str)
 {
@@ -255,6 +264,51 @@ String& String :: operator= (const String& str)
     
 }
 
+String& String :: operator= (char c)
+{
+ 
+  //Creation of new string 
+
+  String my_new_string = String();
+  my_new_string.capacity = sizeof(char);
+  my_new_string.length = 1 ;
+
+  //introduce char c
+
+  my_new_string.Get_string()[0] = c;
+  
+  //return the string
+
+  return my_new_string;
+  
+  
+}
+  
+
+/*String& String :: operator= (const char* s){
+
+		String& new_string = String& String(s);
+		
+		size_t i=0;
+		
+		while (s[i]!='\0'){
+			new_string.length = new_string.length + 1;
+			i++;
+		}
+		//reserve(0);
+		new_string._string = new char[capacity + 1]; 
+		
+		for (size_t j=0;j<length+1;j++){
+			new_string._string[j]=s[j];
+		}
+		//reserve(0);
+
+
+		return new_string;
+
+	}
+
+*/
 
 //Implementation of operator= Student 3
 
@@ -280,7 +334,9 @@ String& String :: operator= (const char* s){
 
 
 
-//Implementation of operator+= methods 
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                                 Implementation of operator+= methods
+///////////////////////////////////////////////////////////////////////////////////////////// 
 
 String& String :: operator+= (char c) 
 {
@@ -318,9 +374,42 @@ String& String :: operator+= (char c)
 
 }
 
-// Operator += (string)
+String& String:: operator+= (const char* s)
+{
+  //calcul de la longeur de la nouvelle chaîne
 
-String& String::operator+= (const String& str){
+  size_t i=0;
+  size_t j;
+  while(_string[i]!='\0'){
+	  i++;
+  }
+  
+  //creation d'une nouvelle String
+
+  String my_new_string = String();
+  my_new_string.capacity = capacity + i*sizeof(char);
+  my_new_string.length = length + i;
+
+  
+  //Replace the character of this in my_new_string
+
+  for (j =0;j<length;j++){
+    my_new_string.Get_string()[j] = _string[j];
+
+     //add char* s*
+
+  for(j=length;j<my_new_string.length;j++){
+    my_new_string.Get_string()[j] = s[j-length];
+    
+  }
+
+return my_new_string;
+}
+
+
+
+String& String:: operator+= (const String& str)
+{
 
   size_t length2=str.Get_length();
   size_t i;
@@ -347,14 +436,12 @@ String& String::operator+= (const String& str){
   this->capacity=lengthplus;
 
   return *this;
-  
-}
-
 
 /*
 //Operator []: Returns the adress of a character located in a position:
 
-char& String::operator[] (size_t pos){
+char& String::operator[] (size_t pos)
+{
 
   char* character;
 
@@ -371,11 +458,9 @@ char& String::operator[] (size_t pos){
   }
 
 }
-*/
 
-/*
 
-String& String :: operator= (const String& str)
+/*String& String :: operator= (const String& str)
 {
 
 		length = str.length;

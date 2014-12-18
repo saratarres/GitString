@@ -81,13 +81,23 @@ class String
     // =======================================================================
     //                                Operators
     // =======================================================================
+	String& operator= (const char* s);
 
+        String& operator= (const String& str);
+	
+	String& operator= (char c);
+
+	String& operator+= (char c);
+
+	String& operator+= (const char* s);
+
+	String& operator+=(const String& str);
     // =======================================================================
     //                              Public Methods
     // =======================================================================
 		
 
-		void clear();
+	void clear();
 
     //Declaration of c_str() Method
 		const char* c_str() const;
@@ -97,19 +107,6 @@ class String
       //if length is 0 returns 0, if not returns 1.
         size_t empty ();
 
-    //Operator =
-        String& operator= (const char* s);
-
-        String& operator= (const String& str);
-
-
-    //Operator +=
-	
-    String& operator+= (char c);
-    
-    String& operator+= (const String& str);
-
-    
 
 	//Declaration of resize method ! 
 	void resize(size_t n);
