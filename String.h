@@ -89,7 +89,9 @@ class String
 
 	String& operator+= (char c);
 
-	String& operator+= (const char* s)
+	String& operator+= (const char* s);
+
+	String& operator+=(const String& str);
     // =======================================================================
     //                              Public Methods
     // =======================================================================
@@ -104,7 +106,7 @@ class String
     //Declaration of empty Method
       //if length is 0 returns 0, if not returns 1.
         size_t empty ();
-       
+
 
 	//Declaration of resize method ! 
 	void resize(size_t n);
@@ -112,7 +114,8 @@ class String
 	//Declaration of at method !!!
 	char* at(size_t pos);
 
-
+    //Operator []
+    char& operator[] (size_t pos);
 
 
 

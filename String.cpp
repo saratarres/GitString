@@ -117,9 +117,8 @@ size_t String::Get_length(void) const
   return length;
 }
 
-char* String :: Get_string(void) const 
+char* String::Get_string(void) const 
 {
-
 	return _string;
 }
 
@@ -187,10 +186,11 @@ void String::reserve (size_t n)
 void String::clear(void)
 {
   length = 0;
+	_string = NULL ;
 } 
 
 
-//Implementation of _str() methods
+//Implementation of c_str() methods
 
 const char* String::c_str() const {
 
@@ -212,7 +212,10 @@ const char* String::c_str() const {
 // =======================================================================
 
 
-//Implementation of Operator= methods
+//////////////////////////////////////////////////////////////////////////
+//                        Implementation of Operator= methods
+//////////////////////////////////////////////////////////////////////////
+
 
 //Student 1
 
@@ -229,7 +232,7 @@ String& String :: operator= (const String& str)
 
   if (taille > MAX_SIZE)
     {
-    printf("The length is too long !!!");
+    printf("The length is too long !!!\n");
     return *this ;
     }
 
@@ -237,7 +240,7 @@ String& String :: operator= (const String& str)
 
   else if (taille < MAX_SIZE && taille > capacity)
     {
-    printf("The length is longer than the capacity !!");
+    printf("The length is longer than the capacity !!\n");
     this->reserve(taille);
     
     for (i=0;i<taille;i++)
@@ -307,41 +310,77 @@ String& String :: operator= (char c)
 
 */
 
-//Implementation of operator+= methods 
+//Implementation of operator= Student 3
+
+
+String& String :: operator= (const char* s){
+    
+    this->length=Get_length();
+   
+    printf("%d\n", this->length);
+    
+    reserve(this->length);
+
+     this->_string = new char[this->length]; 
+    
+    for (size_t j=0;j<length;j++){
+      _string[j]=s[j];
+    }
+    //this->capacity=Get_capacity();
+    return *this;
+
+  }
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+//                                 Implementation of operator+= methods
+///////////////////////////////////////////////////////////////////////////////////////////// 
 
 String& String :: operator+= (char c) 
 {
 
 //Creation of new string 
 
-  String my_new_string = String();
-  my_new_string.capacity = capacity;
-  my_new_string.length = length +1 ;
+
+  //String my_new_string = String() ;
+  //my_new_string.capacity = capacity;
+  //my_new_string.length = length +1 ;
+
+	char* my_new_string = new char [length + 2 ];
 
   int i;
 
 //Replace the character of this in my_new_string
 
-  for (i =0;i< length ;i++){
-    my_new_string.Get_string()[i] = _string[i];
+  for (i =0;i<length;i++){
+    my_new_string[i] = _string[i];
   }
 
 //Add char c
 
-  my_new_string.Get_string()[length] = c;
+  //my_new_string [this-> size() +1] = 'c';
+  my_new_string [length] = c ;
+  my_new_string [length+1]= '\0';
+	
+	String* my_new_string2 =new String(my_new_string);
+	printf(" %s\n", my_new_string2->Get_string());
+
+	//*this=*my_new_string2;
+	
   
-  return my_new_string;
+  return *my_new_string2;
 
 }
 
-
-string& String:: operator+= (const char* s)
+String& String:: operator+= (const char* s)
 {
   //calcul de la longeur de la nouvelle chaîne
 
   size_t i=0;
   size_t j;
-  while(c_string[i]!='\0'){
+  while(_string[i]!='\0'){
 	  i++;
   }
   
@@ -356,25 +395,77 @@ string& String:: operator+= (const char* s)
 
   for (j =0;j<length;j++){
     my_new_string.Get_string()[j] = _string[j];
-  }
 
-  //add char* s*
+     //add char* s*
 
   for(j=length;j<my_new_string.length;j++){
     my_new_string.Get_string()[j] = s[j-length];
     
   }
 
-  return my_new_string;
+return my_new_string;
+}
+
+
+
+String& String:: operator+= (const String& str)
+{
+
+  size_t length2=str.Get_length();
+  size_t i;
+  char * tmp = new char [length2];
+  char * _s = str.Get_string();
+  for (i = 0; i < length2; ++i)
+  {
+   tmp[i]=_s[i]; 
+  }
+  size_t lengthplus=length+length2;
+  char * _stringplus = new char [lengthplus];
+  for ( i=0; i < length ; i++)
+  {
+    _stringplus[i]=_string[i];
+  }
+  for (i = length; i < length2; i++)
+  {
+    _stringplus[i]=tmp[i];
+  }
+
+  this->_string=_stringplus;
+  this->length=lengthplus;
+  this->capacity=lengthplus;
+
+  return *this;
 
 }
+
+
 
   
 
 // Operator =
 
 
-		
+//Operator []: Returns the adress of character located in a position:
+
+char& String::operator[] (size_t pos)
+{
+
+  char* character;
+
+  length=Get_length();
+
+  _string=Get_string();
+
+  size_t i;
+
+  for(i=0; i<this->length;i++){
+    if (i==pos){
+      return this->_string[i];
+    }
+  }
+
+}
+
 
 /*String& String :: operator= (const String& str)
 {
