@@ -336,9 +336,10 @@ String& String::operator+= (const String& str){
   {
     _stringplus[i]=_string[i];
   }
-  for (i = length; i < length2; i++)
+  for (size_t j=0 ;j < length2; j++)
   {
-    _stringplus[i]=tmp[i];
+    _stringplus[i]=tmp[j];
+    i=i+1;
   }
 
   this->_string=_stringplus;
@@ -346,14 +347,12 @@ String& String::operator+= (const String& str){
   this->capacity=lengthplus;
 
   return *this;
-
-
   
 }
 
 
 /*
-//Operator []: Returns the adress of character located in a position:
+//Operator []: Returns the adress of a character located in a position:
 
 char& String::operator[] (size_t pos){
 

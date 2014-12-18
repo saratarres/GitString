@@ -92,8 +92,8 @@ int main(int argc, char* argv[])
 
 	String FirstString ("hola");
 	String SecondString ("chicos");
-	String StringTotal = FirstString += SecondString;
-	printf("%s\n", StringTotal.Get_string());
+	FirstString += SecondString;
+	printf("%s\n", FirstString.Get_string());
 
 
 
@@ -102,22 +102,22 @@ int main(int argc, char* argv[])
 
 	String NewString ("holachicos");
 	Nouvelle_chaine  = NewString;
-	printf(" %s\n", Nouvelle_chaine.Get_string());
+	printf("%s\n", Nouvelle_chaine.Get_string());
 
 
 
-	char * s = "HI!";
-/*
+	
+
 	char * s = new char[3];
 	s[0]='H';
 	s[1]='I';
 	s[2]='!';
-	*/
+
 
 	String MyTestString = (s);
 	printf("%s\n", MyTestString.Get_string());
 
-	//delete [] s;
+	delete [] s;
 
 
 
