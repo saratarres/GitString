@@ -207,9 +207,9 @@ const char* String::c_str() const {
 
 }
 
- // =======================================================================
- //                                Operators
- // =======================================================================
+// =======================================================================
+//                                Operators
+// =======================================================================
 
 
 //Implementation of Operator= methods
@@ -261,8 +261,25 @@ String& String :: operator= (const String& str)
     
 }
 
-String& String :: operator= (const String& str)
+String& String :: operator= (char c)
 {
+ 
+  //Creation of new string 
+
+  String my_new_string = String();
+  my_new_string.capacity = sizeof(char);
+  my_new_string.length = 1 ;
+
+  //introduce char c
+
+  my_new_string.Get_string()[0] = c;
+  
+  //return the string
+
+  return my_new_string;
+  
+  
+}
   
 
 /*String& String :: operator= (const char* s){
@@ -350,10 +367,7 @@ string& String:: operator+= (const char* s)
 
   return my_new_string;
 
-  
-
-  
-
+}
 
   
 
