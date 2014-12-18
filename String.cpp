@@ -405,6 +405,7 @@ String& String:: operator+= (const char* s)
 
 return my_new_string;
 }
+}
 
 
 
@@ -436,9 +437,11 @@ String& String:: operator+= (const String& str)
   this->capacity=lengthplus;
 
   return *this;
+}
 
-/*
-//Operator []: Returns the adress of a character located in a position:
+
+//Operator []: Returns the adress of a character located in a position send in 
+//parameter:
 
 char& String::operator[] (size_t pos)
 {
@@ -449,14 +452,18 @@ char& String::operator[] (size_t pos)
 
   _string=Get_string();
 
-  size_t i;
+   size_t i;
+   --pos;
 
-  for(i=0; i<this->length;i++){
-    if (i==pos){
-      return this->_string[i];
-    }
+  if(pos>this->length-1){
+    printf("ERROR position bigger than length\n");
+    exit(EXIT_FAILURE);
+  } else if(pos==this->length){
+    character='\0';
+    return *character;
+  }else if (pos!= this->length){
+    return _string[pos];
   }
-
 }
 
 

@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
 
 	//Test size methods 
 
-	printf("%d\n", Nouvelle_chaine.size());
+	printf("%lu\n", Nouvelle_chaine.size());
 
 	//test Get_string
  
@@ -84,12 +84,15 @@ int main(int argc, char* argv[])
 		
 	//------------------------------ TEST operator+ ----------------------------
 	
+	printf("TEST OPERATOR +=\n");
+	printf("operator += for a character\n");
 	a = 'b';
 	Nouvelle_chaine += a;
 	printf(" %s\n", Nouvelle_chaine.Get_string());
-	printf("%d\n", Nouvelle_chaine.size());
+	printf("%lu\n", Nouvelle_chaine.size());
 
 
+	printf("operator += for a string\n");
 	String FirstString ("hola");
 	String SecondString ("chicos");
 	FirstString += SecondString;
@@ -100,6 +103,8 @@ int main(int argc, char* argv[])
 
 	//----------------------------- Operator = TEST: ----------------------------
 
+	printf("TEST OPERATOR =\n");
+	printf("operator = for two strings\n");
 	String NewString ("holachicos");
 	Nouvelle_chaine  = NewString;
 	printf("%s\n", Nouvelle_chaine.Get_string());
@@ -107,7 +112,7 @@ int main(int argc, char* argv[])
 
 
 	
-
+	printf("operator = for a char* and a string\n");
 	char * s = new char[3];
 	s[0]='H';
 	s[1]='I';
@@ -116,9 +121,15 @@ int main(int argc, char* argv[])
 
 	String MyTestString = (s);
 	printf("%s\n", MyTestString.Get_string());
-
 	delete [] s;
 
+
+//----------------------------- Operator [] TEST: ----------------------------
+
+	printf("TEST OPERATOR []\n");
+	char c = MyTestString[0];
+	printf("%c\n",c);
+	
 
 
   return 0;
