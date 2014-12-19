@@ -93,10 +93,16 @@ int main(int argc, char* argv[])
 
 
 	printf("operator += for a string\n");
-	String FirstString ("hola");
-	String SecondString ("chicos");
+	String FirstString ("AyAyAy");
+	String SecondString ("caramba");
 	FirstString += SecondString;
 	printf("%s\n", FirstString.Get_string());
+
+	printf("operator += for a char*\n");
+	String stringtest("hola");
+	char* toto ="quetal";
+	stringtest += toto;
+	printf("%s\n", stringtest.Get_string());
 
 
 
@@ -108,6 +114,11 @@ int main(int argc, char* argv[])
 	String NewString ("holachicos");
 	Nouvelle_chaine  = NewString;
 	printf("%s\n", Nouvelle_chaine.Get_string());
+	
+	printf("operator = for a char\n");
+	Nouvelle_chaine = 'f';
+	printf("%s\n",Nouvelle_chaine.Get_string());
+	
 
 
 

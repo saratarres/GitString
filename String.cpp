@@ -275,11 +275,21 @@ String& String :: operator= (char c)
 
   //introduce char c
 
-  my_new_string.Get_string()[0] = c;
+  char* data= new char[2];
+  data[0]='c';
+  data[1]='\0';
   
   //return the string
+  
+  clear();
+  
+  this->_string=data;
+  this->length=1;
+  this->capacity=sizeof(char);
 
-  return my_new_string;
+
+
+  return *this;
   
   
 }
@@ -380,33 +390,41 @@ String& String:: operator+= (const char* s)
 
   size_t i=0;
   size_t j;
-  while(_string[i]!='\0'){
+  while(s[i]!='\0'){
 	  i++;
   }
-  
-  //creation d'une nouvelle String
+  //creation of a new char* data
 
-  String my_new_string = String();
-  my_new_string.capacity = capacity + i*sizeof(char);
-  my_new_string.length = length + i;
-
+  char* data= new char[length+i+1];
   
-  //Replace the character of this in my_new_string
+  //put the _string in data 
 
   for (j =0;j<length;j++){
-    my_new_string.Get_string()[j] = _string[j];
+    data[j] = _string[j];
+  }
+  //add char* s to data
 
-     //add char* s*
-
-  for(j=length;j<my_new_string.length;j++){
-    my_new_string.Get_string()[j] = s[j-length];
+  for(j=length;j<length+i;j++){
+    data[j] = s[j-length];
     
   }
+  //add \0 for data to be a string
+  data[length+i]='\0';
+  
+  size_t x = length+i;
 
-return my_new_string;
-}
-}
+  clear();
+  this->_string=data;
+  this->length=x;
+  this->capacity=(length+i)*sizeof(char);
 
+
+
+  return *this;
+
+
+
+}
 
 
 String& String:: operator+= (const String& str)
