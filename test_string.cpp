@@ -138,8 +138,9 @@ int main(int argc, char* argv[])
 //----------------------------- Operator [] TEST: ----------------------------
 
 	printf("TEST OPERATOR []\n");
-	char c = MyTestString[0];
-	printf("%c\n",c);
+	size_t x = 2;
+	char c = MyTestString[x];
+	printf("The char who's in the position %lu is %c.\n",x,c);
 	
 
 

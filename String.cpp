@@ -295,30 +295,6 @@ String& String :: operator= (char c)
 }
   
 
-/*String& String :: operator= (const char* s){
-
-		String& new_string = String& String(s);
-		
-		size_t i=0;
-		
-		while (s[i]!='\0'){
-			new_string.length = new_string.length + 1;
-			i++;
-		}
-		//reserve(0);
-		new_string._string = new char[capacity + 1]; 
-		
-		for (size_t j=0;j<length+1;j++){
-			new_string._string[j]=s[j];
-		}
-		//reserve(0);
-
-
-		return new_string;
-
-	}
-
-*/
 
 //Implementation of operator= Student 3
 
@@ -326,8 +302,6 @@ String& String :: operator= (char c)
 String& String :: operator= (const char* s){
     
     this->length=Get_length();
-   
-    printf("%d\n", this->length);
     
     reserve(this->length);
 
@@ -336,7 +310,6 @@ String& String :: operator= (const char* s){
     for (size_t j=0;j<length;j++){
       _string[j]=s[j];
     }
-    //this->capacity=Get_capacity();
     return *this;
 
   }
@@ -429,30 +402,45 @@ String& String:: operator+= (const char* s)
 
 String& String:: operator+= (const String& str)
 {
-
+  // We get the length of the string we want to add.
   size_t length2=str.Get_length();
+
+
   size_t i;
+
+  //We create a temporary stirng to save the information of the second string
   char * tmp = new char [length2];
   char * _s = str.Get_string();
   for (i = 0; i < length2; ++i)
   {
    tmp[i]=_s[i]; 
   }
+
+  //We set the size of the new string
   size_t lengthplus=length+length2;
+
+  //New _string for the string result
   char * _stringplus = new char [lengthplus];
+
+  //We read and copy the first string
   for ( i=0; i < length ; i++)
   {
     _stringplus[i]=_string[i];
   }
+  //We copy the temporary string after the end of the first one with i=length(of the first string)
   for (size_t j=0 ;j < length2; j++)
   {
     _stringplus[i]=tmp[j];
     i=i+1;
   }
 
+  
   this->_string=_stringplus;
   this->length=lengthplus;
   this->capacity=lengthplus;
+
+  delete [] tmp;
+  delete [] _stringplus;
 
   return *this;
 }
@@ -471,6 +459,7 @@ char& String::operator[] (size_t pos)
   _string=Get_string();
 
    size_t i;
+   //We do pos-1 to have the first case of the array as number 1 instead of 0.
    --pos;
 
   if(pos>this->length-1){
@@ -485,18 +474,6 @@ char& String::operator[] (size_t pos)
 }
 
 
-/*String& String :: operator= (const String& str)
-{
-
-		length = str.length;
-		reserve(length);
-	  _string = str._string ;
-		
-		return _string ;
-}
-
-		
-*/
 
 // ===========================================================================
 //                                Protected Methods
